@@ -8,8 +8,8 @@ pipeline {
 
       }
     }
-	  def project_path = "spring-boot-samples/spring-boot-sample-atmosphere"
-	  dir(project_path){
+	//  def project_path = "spring-boot-samples/spring-boot-sample-atmosphere"
+	//  dir(project_path)
 		  
 	      stage('Compile') { 
       tools {
@@ -19,11 +19,11 @@ pipeline {
       }
       steps {
 		// maven build
-	      powershell label: '', script: 'mvn clean package'
+	      powershell label: '', script: 'mvn -f spring-boot-samples/spring-boot-sample-atmosphere/pom.xml clean package'
       }
 		      
 	  }
 
-	  }    
+	  
 	}
 }
