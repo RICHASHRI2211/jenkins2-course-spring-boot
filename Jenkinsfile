@@ -15,7 +15,8 @@ pipeline {
        		maven 'Maven'
       }
       steps {
-			// Some Step
+		// maven build
+	      powershell label: '', script: 'mvn clean package'
       }
     }
   }
