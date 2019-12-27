@@ -8,7 +8,10 @@ pipeline {
 
       }
     }
-    stage('Compile') { 
+	  def project_path = "spring-boot-samples/spring-boot-sample-atmosphere"
+	  dir(project_path){
+		  
+	      stage('Compile') { 
       tools {
         // Specify Tool Name from your global tool configuration
 		jdk 'JDK8'
@@ -18,6 +21,9 @@ pipeline {
 		// maven build
 	      powershell label: '', script: 'mvn clean package'
       }
+		      
+	  }
+
     }
   }
 }
