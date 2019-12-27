@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  
+	statges{
     stage('Source') { 
       steps {
 			// Adding checkout
@@ -25,5 +25,5 @@ pipeline {
 	  }
 
 	  }    
-  
+	}
 }
